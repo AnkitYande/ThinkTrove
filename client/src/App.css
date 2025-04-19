@@ -1,0 +1,23 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+/* Layout */
+.app {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+  #root {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (min-width: 768px) {
+  /* Global responsive adjustments can go here */
+} 

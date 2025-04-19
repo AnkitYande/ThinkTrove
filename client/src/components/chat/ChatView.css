@@ -1,0 +1,287 @@
+.chat-view {
+  display: flex;
+  flex-direction: column;
+  height: 80vh; /* Full viewport height */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-sm);
+  box-sizing: border-box; /* Ensure padding doesn't add to height */
+}
+
+.config-selector {
+  margin-bottom: var(--spacing-lg);
+  flex-shrink: 0; /* Prevent selector from shrinking */
+}
+
+.config-selector label {
+  margin-right: var(--spacing-sm);
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.config-selector select {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg-color);
+}
+
+.chat-interface {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  background: var(--card-bg-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-sm);
+  min-height: 0; /* Allow container to shrink */
+  overflow: hidden; /* Contain the scrolling messages */
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+  min-height: 0; /* Allow container to shrink */
+}
+
+.message {
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-md);
+  max-width: 85%;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.message p {
+  margin-bottom: 0;
+}
+
+.message.user {
+  align-self: flex-end;
+  background-color: var(--primary-color);
+  color: var(--card-bg-color);
+}
+
+.message.assistant {
+  align-self: flex-start;
+  background-color: var(--secondary-bg-color);
+  border: 1px solid var(--border-color);
+}
+
+.message.error {
+  align-self: center;
+  background-color: #fff3f3;
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+  width: 100%;
+  text-align: center;
+}
+
+.message.loading {
+  align-self: flex-start;
+  background-color: var(--secondary-bg-color);
+  color: var(--text-light);
+}
+
+/* Markdown Styles */
+.message.assistant p {
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.message.assistant p:last-child {
+  margin-bottom: 0;
+}
+
+.message.assistant h1,
+.message.assistant h2,
+.message.assistant h3,
+.message.assistant h4,
+.message.assistant h5,
+.message.assistant h6 {
+  margin: var(--spacing-md) 0 var(--spacing-sm) 0;
+  line-height: 1.2;
+  color: var(--text-color);
+}
+
+.message.assistant h1:first-child,
+.message.assistant h2:first-child,
+.message.assistant h3:first-child,
+.message.assistant h4:first-child,
+.message.assistant h5:first-child,
+.message.assistant h6:first-child {
+  margin-top: 0;
+}
+
+.message.assistant ul,
+.message.assistant ol {
+  margin: var(--spacing-sm) 0;
+  padding-left: 1.5em;
+}
+
+.message.assistant li {
+  margin: calc(var(--spacing-xs)) 0;
+}
+
+.message.assistant code {
+  background-color: var(--secondary-bg-color);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.message.assistant pre {
+  background-color: var(--secondary-bg-color);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  overflow-x: auto;
+  margin: var(--spacing-xs) 0;
+}
+
+.message.assistant pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.message.assistant blockquote {
+  border-left: 4px solid var(--border-color);
+  margin: var(--spacing-sm) 0;
+  padding-left: var(--spacing-md);
+  color: var(--text-light);
+}
+
+.message.assistant table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: var(--spacing-sm) 0;
+}
+
+.message.assistant th,
+.message.assistant td {
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-sm);
+  text-align: left;
+}
+
+.message.assistant th {
+  background-color: var(--secondary-bg-color);
+}
+
+.input-area {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs);
+  background-color: var(--card-bg-color);
+  border-top: 1px solid var(--border-color);
+  min-height: 50px;
+}
+
+.input-area input {
+  flex: 1;
+  min-width: 0; /* Prevents input from overflowing */
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  transition: border-color var(--transition-speed) ease;
+}
+
+.input-area input:disabled {
+  background-color: var(--secondary-bg-color);
+  cursor: not-allowed;
+}
+
+.input-area button {
+  white-space: nowrap;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--primary-color);
+  color: var(--card-bg-color);
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color var(--transition-speed) ease;
+  min-width: 80px;
+}
+
+.input-area button:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+.input-area button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Scrollbar Styles */
+.messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages::-webkit-scrollbar-track {
+  background: var(--secondary-bg-color);
+  border-radius: var(--border-radius-sm);
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: var(--border-radius-sm);
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+  background: var(--text-light);
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+  .chat-view {
+    height: calc(100vh - 2rem); /* Account for any margins/padding */
+    padding: var(--spacing-md);
+  }
+
+  .chat-interface {
+    padding: var(--spacing-md);
+  }
+
+  .messages {
+    padding: var(--spacing-sm);
+  }
+
+  .message {
+    max-width: 75%;
+    padding: var(--spacing-md);
+  }
+
+  .input-area {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-md);
+  }
+
+  .input-area button {
+    padding: var(--spacing-sm) var(--spacing-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .chat-view {
+    height: calc(100vh - 3rem);
+    padding: var(--spacing-lg);
+  }
+
+  .chat-interface {
+    padding: var(--spacing-lg);
+  }
+
+  .message {
+    max-width: 65%;
+  }
+} 

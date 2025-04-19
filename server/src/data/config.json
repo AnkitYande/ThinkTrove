@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1745097243249",
+    "lessonTitle": "Mystery of the Sick Students",
+    "gradeLevel": "Middle School",
+    "subject": "Science / Health",
+    "estimatedTime": "20-30 minutes",
+    "learningObjective": "Students will apply the scientific method to identify environmental causes of illness.",
+    "tags": "Scientific Method, Environmental Science, Critical Thinking",
+    "phases": [
+      "Question",
+      "Hypothesis",
+      "Investigation",
+      "Data",
+      "Conclusion"
+    ],
+    "validHypotheses": "poor air quality, lack of food, contaminated water",
+    "misconceptions": "viruses cause immediate illness, stress alone causes nausea",
+    "correctConcepts": "chronic exposure to poor air quality can cause illness, environmental factors impact health",
+    "tone": "Socratic but friendly",
+    "nudgeOnWrongAnswers": true,
+    "reinforceGoodReasoning": true,
+    "offerHintsIfStuck": true,
+    "scaffoldingLevel": "Moderate",
+    "maxHints": "2",
+    "reflectionPrompt": "What do you think caused the illness, and how confident are you in your conclusion?",
+    "additionalInstructions": "",
+    "createdAt": "2025-04-19T21:14:03.249Z"
+  }
+]
