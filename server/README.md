@@ -79,9 +79,21 @@ npm start
 
 - `PORT` - Server port (default: 5000)
 - `GROQ_API_KEY` - Your Groq API key
+- `GROQ_API_KEY_2` - Secondary Groq API key for rotation (optional)
 - `GROQ_MODEL` - Model to use (default: llama-3.3-70b-versatile)
 - `TEMPERATURE` - Temperature setting for AI responses (default: 0.7)
 - `MAX_TOKENS` - Maximum tokens for AI responses (default: 1000)
+- `SUMMARY_THRESHOLD` - Number of conversation messages before summarization is triggered (default: 2)
+- `MAX_RECENT_MESSAGES` - Number of most recent messages to keep after summarization (default: 2)
+
+## Token Usage Optimization
+
+The server implements conversation summarization to reduce token usage:
+
+- When the number of messages exceeds `SUMMARY_THRESHOLD`, the conversation history is summarized
+- Only the system message, summary, and the `MAX_RECENT_MESSAGES` most recent messages are sent to the API
+- This significantly reduces token usage for long conversations while maintaining context
+- Token usage statistics are logged for both regular requests and summarization requests
 
 ## Error Handling
 
