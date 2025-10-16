@@ -166,6 +166,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Future Enhancements
 
 - User authentication for teachers and students
+- Database to hold user generated lessons
 - History of student conversations
 - Analytics dashboard for teachers
 - Additional AI model options
