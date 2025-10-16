@@ -4,6 +4,11 @@ ThinkTrove is an educational AI platform that allows teachers to configure AI-po
 
 ### Project Live at https://ankityande.github.io/ThinkTrove/
 
+```
+NOTE: This server is hosted by the Free Tier of Render.
+As a result, servers may spin down. Please allow up to 1min for server to start
+```
+
 ## Features
 
 - **Teacher Interface:**
