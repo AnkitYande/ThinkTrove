@@ -2,6 +2,8 @@
 
 ThinkTrove is an educational AI platform that allows teachers to configure AI-powered learning experiences for students. It leverages the Groq LLaMA 3.3 model to create engaging, personalized educational interactions.
 
+### Project Live at https://ankityande.github.io/ThinkTrove/
+
 ## Features
 
 - **Teacher Interface:**
